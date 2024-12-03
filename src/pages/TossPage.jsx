@@ -25,7 +25,7 @@ const StyledIframe = styled.iframe`
   border: none;
 `;
 
-const MainPage = () => {
+const TossPage = () => {
   return (
     <>
       <Container>
@@ -37,4 +37,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default TossPage;

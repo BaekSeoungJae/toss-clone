@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Logo from "../img/토스헤더.png";
 
 const Container = styled.div`
   width: 100%;
@@ -34,7 +35,34 @@ const HeaderWrap = styled.div`
 const HeaderBox = styled.div`
   width: 92%;
   height: 100%;
-  background-color: blue;
+  display: flex;
+`;
+
+const HeaderLogo = styled.div`
+  width: 76px;
+  height: 100%;
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+const TossLogo = styled.div`
+  width: 65.63px;
+  height: 50px;
+  display: flex;
+  background-image: url(${Logo});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+`;
+
+const HeaderMenu = styled.div`
+  width: 949px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const TossClone = () => {
@@ -56,7 +84,12 @@ const TossClone = () => {
     <>
       <Header hasShadow={hasShadow}>
         <HeaderWrap>
-          <HeaderBox></HeaderBox>
+          <HeaderBox>
+            <HeaderLogo>
+              <TossLogo />
+            </HeaderLogo>
+            <HeaderMenu></HeaderMenu>
+          </HeaderBox>
         </HeaderWrap>
       </Header>
       <Container />

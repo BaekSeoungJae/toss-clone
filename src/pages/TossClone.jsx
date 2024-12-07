@@ -62,7 +62,36 @@ const HeaderMenu = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+`;
+
+const MenuBox = styled.div`
+  padding: 0 8px;
+  color: #4e5968;
+  white-space: nowrap;
+`;
+
+const MenuName = styled.div`
+  padding: 12px 10px;
+  font-size: 13px;
+  line-height: 20px;
+  color: currentColor;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  text-align: left;
+`;
+
+const LangBox = styled.div`
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  margin: 0 auto 0 0;
 `;
 
 const TossClone = () => {
@@ -88,7 +117,33 @@ const TossClone = () => {
             <HeaderLogo>
               <TossLogo />
             </HeaderLogo>
-            <HeaderMenu></HeaderMenu>
+            <HeaderMenu>
+              <MenuBox>
+                <MenuName>회사 소개</MenuName>
+              </MenuBox>
+              <MenuBox>
+                <MenuName>공지사항</MenuName>
+              </MenuBox>
+              <MenuBox>
+                <MenuName>고객센터</MenuName>
+              </MenuBox>
+              <MenuBox>
+                <MenuName>자주 묻는 질문</MenuName>
+              </MenuBox>
+              <MenuBox>
+                <MenuName>토스인증서</MenuName>
+              </MenuBox>
+              <MenuBox>
+                <MenuName>채용</MenuName>
+              </MenuBox>
+              <MenuBox>
+                <LangBox>
+                  <MenuName>KOR</MenuName>
+                  <span class="css-9hfgjx">|</span>
+                  <MenuName>ENG</MenuName>
+                </LangBox>
+              </MenuBox>
+            </HeaderMenu>
           </HeaderBox>
         </HeaderWrap>
       </Header>

@@ -73,7 +73,7 @@ const MenuBox = styled.div`
 
 const MenuName = styled.div`
   padding: 12px 10px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
   color: currentColor;
   border-radius: 8px;
@@ -82,6 +82,10 @@ const MenuName = styled.div`
   background-color: transparent;
   text-decoration: none;
   text-align: left;
+
+  &:hover {
+    background-color: #f4f4f4;
+  }
 `;
 
 const LangBox = styled.div`

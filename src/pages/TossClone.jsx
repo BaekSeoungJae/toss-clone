@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Logo from "../img/토스헤더.png";
+import MainImage from "../img/토스메인.png";
 
 const Container = styled.div`
   width: 100%;
@@ -98,6 +99,43 @@ const LangBox = styled.div`
   margin: 0 auto 0 0;
 `;
 
+// Main 관련 스타일
+const MainBody = styled.div`
+  width: 100%;
+  height: 100vh; /* 화면 전체 높이 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url(${MainImage});
+  background-size: cover; /* 이미지가 화면을 채우도록 설정 */
+  background-position: center; /* 이미지 가운데 정렬 */
+  background-repeat: no-repeat; /* 이미지 반복 방지 */
+`;
+
+const MainText = styled.div`
+  position: relative;
+  z-index: 1; /* 텍스트가 이미지 위에 표시되도록 설정 */
+  text-align: center;
+  color: black;
+
+  h1 {
+    font-size: 66px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+`;
+
 const TossClone = () => {
   const [hasShadow, setHasShadow] = useState(false);
 
@@ -151,6 +189,13 @@ const TossClone = () => {
           </HeaderBox>
         </HeaderWrap>
       </Header>
+      <MainBody>
+        <Overlay />
+        <MainText>
+          <h1>금융의 모든 것</h1>
+          <h1>토스에서 쉽고 간편하게</h1>
+        </MainText>
+      </MainBody>
       <Container />
     </>
   );

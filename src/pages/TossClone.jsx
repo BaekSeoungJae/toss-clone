@@ -127,13 +127,19 @@ const MainText = styled.div`
   }
 `;
 
-const Overlay = styled.div`
+const GradientOverlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 0;
+  height: 500px;
+  background: linear-gradient(
+    180deg,
+    white 0%,
+    white 59px,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1; /* 텍스트 위에 배치되지 않도록 설정 */
 `;
 
 const TossClone = () => {
@@ -190,7 +196,7 @@ const TossClone = () => {
         </HeaderWrap>
       </Header>
       <MainBody>
-        <Overlay />
+        <GradientOverlay />
         <MainText>
           <h1>금융의 모든 것</h1>
           <h1>토스에서 쉽고 간편하게</h1>

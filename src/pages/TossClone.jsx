@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Logo from "../img/토스헤더.png";
 import MainImage from "../img/토스메인.png";
+import AppleImage from "../img/apple.png";
+import GoogleImage from "../img/googleplay.png";
 
 const Container = styled.div`
   width: 100%;
@@ -142,6 +144,69 @@ const GradientOverlay = styled.div`
   z-index: 1; /* 텍스트 위에 배치되지 않도록 설정 */
 `;
 
+const BtnDiv = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+const AppleBtn = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 4px;
+  background-color: rgba(0, 12, 30, 0.8);
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  padding: 11px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    background-color: rgba(68, 81, 100, 0.8);
+    transition: background-color 0.3s ease;
+  }
+`;
+
+const AppleLogo = styled.div`
+  width: 24px;
+  height: 24px;
+  background-image: url(${AppleImage});
+  background-size: cover; /* 이미지가 화면을 채우도록 설정 */
+  background-position: center; /* 이미지 가운데 정렬 */
+  background-repeat: no-repeat; /* 이미지 반복 방지 */
+`;
+
+const GoogleLogo = styled.div`
+  width: 24px;
+  height: 24px;
+  background-image: url(${GoogleImage});
+  background-size: cover; /* 이미지가 화면을 채우도록 설정 */
+  background-position: center; /* 이미지 가운데 정렬 */
+  background-repeat: no-repeat; /* 이미지 반복 방지 */
+`;
+
+const GoogleBtn = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 4px;
+  background-color: rgba(0, 12, 30, 0.8);
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  padding: 11px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    background-color: rgba(68, 81, 100, 0.8);
+    transition: background-color 0.3s ease;
+  }
+`;
+
 const TossClone = () => {
   const [hasShadow, setHasShadow] = useState(false);
 
@@ -201,6 +266,14 @@ const TossClone = () => {
           <h1>금융의 모든 것</h1>
           <h1>토스에서 쉽고 간편하게</h1>
         </MainText>
+        <BtnDiv>
+          <AppleBtn>
+            <AppleLogo></AppleLogo>App Store
+          </AppleBtn>
+          <GoogleBtn>
+            <GoogleLogo></GoogleLogo>Google Play
+          </GoogleBtn>
+        </BtnDiv>
       </MainBody>
       <Container />
     </>

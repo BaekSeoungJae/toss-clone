@@ -101,31 +101,33 @@ const LangBox = styled.div`
   margin: 0 auto 0 0;
 `;
 
-// Main 관련 스타일
 const MainBody = styled.div`
   width: 100%;
-  height: 100vh; /* 화면 전체 높이 */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   background-image: url(${MainImage});
-  background-size: cover; /* 이미지가 화면을 채우도록 설정 */
-  background-position: center; /* 이미지 가운데 정렬 */
-  background-repeat: no-repeat; /* 이미지 반복 방지 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const MainText = styled.div`
   position: relative;
-  z-index: 1; /* 텍스트가 이미지 위에 표시되도록 설정 */
+  z-index: 1;
   text-align: center;
   color: black;
+  margin-top: 130px;
 
   h1 {
-    font-size: 66px;
+    height: 55px;
+    font-size: 63px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 15px;
+    letter-spacing: -6px;
   }
 `;
 
@@ -141,7 +143,7 @@ const GradientOverlay = styled.div`
     white 59px,
     rgba(255, 255, 255, 0) 100%
   );
-  z-index: 1; /* 텍스트 위에 배치되지 않도록 설정 */
+  z-index: 1;
 `;
 
 const BtnDiv = styled.div`
@@ -149,6 +151,7 @@ const BtnDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 65px;
 `;
 
 const AppleBtn = styled.div`
@@ -162,6 +165,7 @@ const AppleBtn = styled.div`
   font-size: 17px;
   padding: 11px 22px;
   border-radius: 8px;
+  z-index: 2;
   cursor: pointer;
   text-decoration: none;
   &:hover {
@@ -174,18 +178,18 @@ const AppleLogo = styled.div`
   width: 24px;
   height: 24px;
   background-image: url(${AppleImage});
-  background-size: cover; /* 이미지가 화면을 채우도록 설정 */
-  background-position: center; /* 이미지 가운데 정렬 */
-  background-repeat: no-repeat; /* 이미지 반복 방지 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const GoogleLogo = styled.div`
   width: 24px;
   height: 24px;
   background-image: url(${GoogleImage});
-  background-size: cover; /* 이미지가 화면을 채우도록 설정 */
-  background-position: center; /* 이미지 가운데 정렬 */
-  background-repeat: no-repeat; /* 이미지 반복 방지 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const GoogleBtn = styled.div`
@@ -199,6 +203,7 @@ const GoogleBtn = styled.div`
   font-size: 17px;
   padding: 11px 22px;
   border-radius: 8px;
+  z-index: 2;
   cursor: pointer;
   text-decoration: none;
   &:hover {

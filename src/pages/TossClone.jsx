@@ -211,6 +211,8 @@ const GoogleBtn = styled.div`
   }
 `;
 
+const DownBtn = styled.div``;
+
 const TossClone = () => {
   const [hasShadow, setHasShadow] = useState(false);
 
@@ -278,6 +280,7 @@ const TossClone = () => {
             <GoogleLogo></GoogleLogo>Google Play
           </GoogleBtn>
         </BtnDiv>
+        <DownBtn></DownBtn>
       </MainBody>
       <Container />
     </>

@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Logo from "../img/토스헤더.png";
 import MainImage from "../img/토스메인.png";
 import AppleImage from "../img/apple.png";
 import GoogleImage from "../img/googleplay.png";
+
+// 애니메이션 키프레임 정의
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const Container = styled.div`
   width: 100%;
@@ -120,6 +130,8 @@ const MainText = styled.div`
   text-align: center;
   color: black;
   margin-top: 130px;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  animation: ${({ isVisible }) => (isVisible ? fadeIn : "none")} 1s ease-out;
 
   h1 {
     height: 55px;
@@ -151,6 +163,8 @@ const BtnDiv = styled.div`
   flex-direction: row;
   justify-content: center;
   margin-top: 65px;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  animation: ${({ isVisible }) => (isVisible ? fadeIn : "none")} 1s ease-out;
 `;
 
 const AppleBtn = styled.div`
@@ -215,15 +229,21 @@ const DownBtn = styled.div``;
 
 const TossClone = () => {
   const [hasShadow, setHasShadow] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setHasShadow(window.scrollY > 0);
     };
 
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -268,11 +288,11 @@ const TossClone = () => {
       </Header>
       <MainBody>
         <GradientOverlay />
-        <MainText>
+        <MainText isVisible={isVisible}>
           <h1>금융의 모든 것</h1>
           <h1>토스에서 쉽고 간편하게</h1>
         </MainText>
-        <BtnDiv>
+        <BtnDiv isVisible={isVisible}>
           <AppleBtn>
             <AppleLogo></AppleLogo>App Store
           </AppleBtn>
